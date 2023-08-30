@@ -1,0 +1,11 @@
+<shopping-edit></shopping-edit>
+<hr />
+<div class="d-flex gap-2">
+  <p
+    class="card text-black btn"
+    *ngFor="let ingredient of ingredients; let i = index"
+    (click)="onEdit(i)"
+  >
+    {{ ingredient.name }} {{ ingredient.amount }}
+  </p>
+</div>

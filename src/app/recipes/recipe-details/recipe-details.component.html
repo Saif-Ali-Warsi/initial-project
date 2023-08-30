@@ -1,0 +1,17 @@
+<img [src]="recipe.imagePath" class="img-responsive" width="100" height="100" />
+<p>{{ recipe.name }}</p>
+<p>{{ recipe.description }}</p>
+<ul>
+  <li *ngFor="let ingredient of recipe.ingredients">
+    {{ ingredient.name }} - {{ ingredient.amount }}
+  </li>
+</ul>
+<hr />
+<div class="d-flex gap-3">
+  <button class="btn btn-primary" (click)="onAddToShoppingList()">
+    Add to shopping list
+  </button>
+  <button class="btn btn-warning" (click)="onEditRecipe()">Edit</button>
+  <button class="btn btn-danger">Delete</button>
+</div>
+

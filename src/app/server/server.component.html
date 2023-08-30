@@ -1,0 +1,53 @@
+<ng-container *ngIf="false">
+  <input
+    class="input input-group"
+    placeholder="Type server name"
+    (input)="onUpdateServerName($event)"
+  />
+  <span>{{ serverName }}</span>
+  <hr />
+  <button class="btn btn-warning w-100" [disabled]="allowNewServer">
+    Server Test
+  </button>
+  <hr />
+  <button
+    class="btn btn-success w-100"
+    [disabled]="!allowNewServer"
+    (click)="createServer()"
+  >
+    Create Server
+  </button>
+  <hr />
+  <h4 class="text-center">
+    {{ createNewServer }}
+  </h4>
+</ng-container>
+
+<ng-container *ngIf="false">
+  <input
+    type="text"
+    [(ngModel)]="sampleText"
+    (input)="onUpdateServerName($event)"
+  />
+  <p>{{ sampleText }}</p>
+  <button
+    class="btn btn-primary"
+    [disabled]="sampleText === ''"
+    (click)="sampleText = ''"
+  >
+    Submit
+  </button>
+</ng-container>
+
+<ng-container *ngIf="true">
+  <button class="btn btn-primary" (click)="checkDetails()">
+    Display Details
+  </button>
+  <p *ngIf="detailStatus">Secret Password = tuna</p>
+  <p
+    [ngStyle]="{ color: logItem >= 5 ? 'red' : 'black' }"
+    *ngFor="let logItem of log"
+  >
+    {{ logItem }}
+  </p>
+</ng-container>

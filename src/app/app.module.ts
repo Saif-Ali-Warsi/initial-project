@@ -23,6 +23,7 @@ import { FormAssignmentComponent } from './form-assignment/form-assignment.compo
 import { FakeApiComponent } from './fake-api/fake-api.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

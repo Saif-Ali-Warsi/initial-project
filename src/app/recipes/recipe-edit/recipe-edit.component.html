@@ -1,1 +1,47 @@
-<p>recipe-edit works!</p>
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex gap-3">
+    <button
+      type="submit"
+      class="btn btn-success btn-sm"
+      [disabled]="!recipeForm.valid"
+    >
+      Save
+    </button>
+    <button type="button" class="btn btn-danger btn-sm" (click)="onCancel()">
+      Cancel
+    </button>
+  </div>
+  <hr />
+  <label>name</label>
+  <input type="text" formControlName="name" />
+  <hr />
+  <label>Image path</label>
+  <input type="text" formControlName="imagePath" #imagePath />
+  <hr />
+  <img [src]="imagePath.value" class="img-responsive" height="100px" width="100" />
+  <hr />
+  <label>description</label>
+  <input type="text" formControlName="description" />
+  <hr />
+  <div formArrayName="ingredients">
+    <div
+      *ngFor="let ingredientCtrl of controls; let i = index"
+      [formGroupName]="i"
+    >
+      <div class="d-flex justify-content-between gap-2">
+        <input class="mb-3" type="text" formControlName="name" />
+        <input class="mb-3" type="number" formControlName="amount" />
+        <button type="button" class="btn btn-danger mb-3 d-block btn-sm">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="btn col-12 btn-sm btn-success"
+    (click)="onAddIngredient()"
+  >
+    Add Ingredient
+  </button>
+</form>

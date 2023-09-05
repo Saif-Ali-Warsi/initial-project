@@ -9,7 +9,6 @@ import { RecipeService } from './recipe.service';
   selector: 'recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss'],
-  providers: [RecipeService],
 })
 export class RecipesComponent implements OnInit {
   products!: ProductModel[];

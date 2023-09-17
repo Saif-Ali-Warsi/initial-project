@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RecipeService } from './recipes/recipe.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { RecipeService } from './recipes/recipe.service';
     RecipeEditComponent,
     FormAssignmentComponent,
     FakeApiComponent,
+    
   ],
   imports: [
     BrowserModule,
